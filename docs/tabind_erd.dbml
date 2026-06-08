@@ -1,0 +1,26 @@
+Table source_dictionary {
+  id integer [primary key]
+  name varchar
+  version varchar
+  source_url varchar
+}
+
+Table candidate_word {
+  id integer [primary key]
+  source_dictionary_id integer
+  raw_text varchar
+  normalized_text varchar
+  is_alpha boolean
+}
+
+Table result_word {
+  id integer [primary key]
+  candidate_word_id integer
+  rack varchar
+  word varchar
+  length integer
+  scrabble_score integer
+}
+
+Ref: candidate_word.source_dictionary_id > source_dictionary.id
+Ref: result_word.candidate_word_id > candidate_word.id

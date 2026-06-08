@@ -1,0 +1,9 @@
+[project]
+name = "tabind-scrabble-project"
+version = "1.0.0"
+description = "TABIND Scrabble Project: find Scrabble words that can be formed from the letters tabind."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.uv]
+package = false
