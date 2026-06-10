@@ -18,6 +18,8 @@ from typing import Iterable
 
 DEFAULT_RACK = "tabind"
 MIN_WORD_LENGTH = 2
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_DICTIONARY = PROJECT_ROOT / "data" / "sample_scrabble_dictionary.txt"
 
 
 def normalize_word(raw_word: str) -> str:
@@ -74,8 +76,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "dictionary",
+        nargs="?",
         type=Path,
-        help="Text dictionary file with one Scrabble word per line.",
+        help=(
+            "Text dictionary file with one Scrabble word per line. "
+            "Default: data/sample_scrabble_dictionary.txt"
+        ),
     )
     parser.add_argument(
         "--letters",
@@ -91,8 +97,14 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
-    dictionary_words = read_dictionary(args.dictionary)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    dictionary_path = args.dictionary or DEFAULT_DICTIONARY
+
+    if not dictionary_path.exists():
+        parser.error(f"dictionary file not found: {dictionary_path}")
+
+    dictionary_words = read_dictionary(dictionary_path)
     words = find_words(dictionary_words, args.letters)
     write_output(words, args.output)
     return 0

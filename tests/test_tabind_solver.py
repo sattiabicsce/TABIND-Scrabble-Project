@@ -1,6 +1,8 @@
 import unittest
+from contextlib import redirect_stdout
+from io import StringIO
 
-from src.tabind_solver import can_build_from_rack, find_words
+from src.tabind_solver import can_build_from_rack, find_words, main
 
 
 class TabindSolverTest(unittest.TestCase):
@@ -20,6 +22,17 @@ class TabindSolverTest(unittest.TestCase):
 
     def test_single_letter_words_are_excluded(self):
         self.assertEqual(find_words(["a", "i", "an"]), ["an"])
+
+    def test_main_uses_bundled_dictionary_by_default(self):
+        output = StringIO()
+        with redirect_stdout(output):
+            status_code = main([])
+
+        self.assertEqual(status_code, 0)
+        words = output.getvalue().splitlines()
+        self.assertEqual(len(words), 51)
+        self.assertEqual(words[0], "ab")
+        self.assertEqual(words[-1], "tin")
 
 
 if __name__ == "__main__":

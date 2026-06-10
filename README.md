@@ -121,13 +121,13 @@ The same ERD is saved as [`docs/tabind_erd.dbml`](docs/tabind_erd.dbml).
 The project is dependency-free and can be run with standard Python:
 
 ```bash
-python src/tabind_solver.py data/sample_scrabble_dictionary.txt
+python src/tabind_solver.py
 ```
 
 With `uv`, as recommended in the checklist:
 
 ```bash
-uv run python src/tabind_solver.py data/sample_scrabble_dictionary.txt
+uv run python src/tabind_solver.py
 ```
 
 To use a full Scrabble dictionary, provide a text file with one word per line:
