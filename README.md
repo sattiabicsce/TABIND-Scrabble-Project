@@ -149,15 +149,6 @@ The tests verify that the solver:
 - ignores punctuation and non-alpha entries
 - returns words in alphabetical order
 
-## GitHub Pages
-
-This repository is ready for GitHub Pages.
-
-1. Push the project to GitHub.
-2. In the repository settings, enable Pages from GitHub Actions.
-3. The workflow in `.github/workflows/pages.yml` publishes `index.html`, `data/`, `docs/`, and `src/`.
-
-The live page is a static documentation page, so it does not need a server.
 
 ## Sources
 
