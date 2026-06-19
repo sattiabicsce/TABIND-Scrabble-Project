@@ -360,7 +360,7 @@
     <div class="hero">
       <div>
         <h1>TABIND Scrabble Project</h1>
-        <p class="lead">Alphabetized output for the rack `tabind`, with each letter used at most once. The Python solver reads a full Scrabble dictionary file, then filters it to the words that can be made from those six characters.</p>
+        <p class="lead">Alphabetized output for the rack `tabind`, with each letter used at most once. The Python solver reads a full NWL2023 Scrabble dictionary file, then filters it to the whole playable words that can be made from those six characters.</p>
         <div class="rack" aria-label="Input rack tabind">
           <span class="tile">T<small>1</small></span>
           <span class="tile">A<small>1</small></span>
@@ -378,7 +378,7 @@
 
       <aside class="stats" aria-label="Summary statistics">
         <div class="stat-grid">
-          <div class="stat"><strong>65</strong><span>words found</span></div>
+          <div class="stat"><strong>51</strong><span>words found</span></div>
           <div class="stat"><strong>5</strong><span>word lengths</span></div>
           <div class="stat"><strong>9</strong><span>top score</span></div>
           <div class="stat"><strong>6</strong><span>rack letters</span></div>
@@ -449,7 +449,7 @@ Table result_word {
     <section id="run" class="two-col" aria-labelledby="run-title">
         <div class="panel">
           <h2 id="run-title">Run the Program</h2>
-          <p>The project includes a full dictionary file at <code>data/scrabble_dictionary.txt</code>, one valid word per line. Run:</p>
+          <p>The project includes a full NWL2023 dictionary file at <code>data/scrabble_dictionary.txt</code>, one valid word per line. Run:</p>
           <pre><code>python src/tabind_solver.py</code></pre>
           <pre><code>uv run python src/tabind_solver.py</code></pre>
           <p>Or pass the full dictionary path explicitly:</p>
@@ -458,8 +458,8 @@ Table result_word {
 
       <div class="panel">
         <h2>Sources</h2>
-        <p>The solver reads from the bundled full Scrabble word list in <code>data/scrabble_dictionary.txt</code>. That file comes from Richard Ressler's Scrabble Word List dataset, described as authorized words for use in Scrabble. You can replace it with a different full dictionary file if your class requires a specific edition.</p>
-        <p><a href="https://rressler.quarto.pub/i_data_sets/data_word_lists.html">Dictionary source</a></p>
+        <p>The solver reads from the bundled NWL2023 Scrabble word list in <code>data/scrabble_dictionary.txt</code>. The source dictionary file includes definitions, so this project keeps only the first token on each line as the playable word. You can replace it with a different full dictionary file if your class requires a specific edition.</p>
+        <p><a href="https://github.com/scrabblewords/scrabblewords/tree/main/words/North-American">Dictionary source</a></p>
       </div>
     </section>
   </main>
@@ -470,7 +470,7 @@ Table result_word {
 
   <script type="module">
     const tileScores = { a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 2, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10 };
-    const words = "ab abid ad adit ai aid ain ait an and ani ant anti at ba bad bait ban band bandit bani bant bat bi bid bin bind bint bit da dab daint dan dant di dib din dint dit dita id idant in it ita na nab nat nib nid nit ta tab tabi tabid tad tai tain tan ti tian tid tin tina tind"
+    const words = "ab ad adit ai aid ain ait an and ani ant anti at ba bad bait ban band bandit bani bat bi bid bin bind bint bit da dab dan dib din dint dit dita id in it na nab nib nit ta tab tabid tad tain tan ti tian tin"
       .split(" ")
       .map((word) => ({
         word,

@@ -4,15 +4,14 @@ This project solves one focused data science assignment:
 
 > Take the letter combination `tabind` one time and create an alphabetical list of every Scrabble-valid word that can be formed from those letters.
 
-The implementation uses a small, documented Python program and a GitHub Pages-ready documentation page. The program reads a full Scrabble dictionary file, then finds only the words that can be built from `tabind` while using each character no more than once. The bundled dictionary is `data/scrabble_dictionary.txt`, sourced from Richard Ressler's Scrabble Word List dataset.
+The implementation uses a small, documented Python program and a GitHub Pages-ready documentation page. The program reads a full Scrabble dictionary file, then finds only the whole playable words that can be built from `tabind` while using each character no more than once. The bundled dictionary is `data/scrabble_dictionary.txt`, built from the North American Word List 2023 file in the `scrabblewords/scrabblewords` repository.
 
 ## Final Alphabetical Output
 
-Using the bundled full Scrabble word list in `data/scrabble_dictionary.txt`, the `tabind` result contains 65 words:
+Using the bundled NWL2023 Scrabble word list in `data/scrabble_dictionary.txt`, the `tabind` result contains 51 words:
 
 ```text
 ab
-abid
 ad
 adit
 ai
@@ -32,7 +31,6 @@ ban
 band
 bandit
 bani
-bant
 bat
 bi
 bid
@@ -42,40 +40,28 @@ bint
 bit
 da
 dab
-daint
 dan
-dant
-di
 dib
 din
 dint
 dit
 dita
 id
-idant
 in
 it
-ita
 na
 nab
-nat
 nib
-nid
 nit
 ta
 tab
-tabi
 tabid
 tad
-tai
 tain
 tan
 ti
 tian
-tid
 tin
-tina
-tind
 ```
 
 ## Method
@@ -132,7 +118,7 @@ The same ERD is saved as [`docs/tabind_erd.dbml`](docs/tabind_erd.dbml).
 
 ## Run Locally
 
-The project is dependency-free and includes a full Scrabble word list at `data/scrabble_dictionary.txt`. Run:
+The project is dependency-free and includes a full NWL2023 Scrabble word list at `data/scrabble_dictionary.txt`. Run:
 
 ```bash
 python src/tabind_solver.py
@@ -169,8 +155,8 @@ The tests verify that the solver:
 
 ## Sources
 
-- Richard Ressler Scrabble Word List dataset: https://rressler.quarto.pub/i_data_sets/data_word_lists.html
-- Bundled full dictionary source file: https://raw.githubusercontent.com/rressler/data_raw_courses/main/scrabble_words.txt
+- NASPA NWL2023 description: https://scrabbleplayers.org/w/NWL2023
+- Bundled dictionary source file: https://raw.githubusercontent.com/scrabblewords/scrabblewords/main/words/North-American/NWL2023.txt
 - Official Scrabble Players Dictionary word finder by Merriam-Webster: https://scrabble.merriam.com/
 - Mermaid documentation: https://mermaid.js.org/
 - dbdiagram: https://dbdiagram.io/

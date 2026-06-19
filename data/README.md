@@ -8,10 +8,11 @@ data/scrabble_dictionary.txt
 
 The solver reads that full dictionary, then keeps only the words that can be built from `tabind` while using each character no more than once.
 
-The bundled file comes from Richard Ressler's Scrabble Word List dataset, described as authorized words for use in Scrabble:
+The bundled file is derived from the North American Word List 2023 file in the `scrabblewords/scrabblewords` repository. The source file includes definitions; this project keeps only the first token on each line as the playable dictionary word.
 
-- https://rressler.quarto.pub/i_data_sets/data_word_lists.html
-- https://raw.githubusercontent.com/rressler/data_raw_courses/main/scrabble_words.txt
+- https://scrabbleplayers.org/w/NWL2023
+- https://github.com/scrabblewords/scrabblewords/tree/main/words/North-American
+- https://raw.githubusercontent.com/scrabblewords/scrabblewords/main/words/North-American/NWL2023.txt
 
 You can also run the solver with any other full Scrabble dictionary file you are allowed to use:
 

@@ -48,9 +48,10 @@ class TabindSolverTest(unittest.TestCase):
 
         words = output.getvalue().splitlines()
         self.assertEqual(status_code, 0)
-        self.assertEqual(len(words), 65)
+        self.assertEqual(len(words), 51)
         self.assertEqual(words[0], "ab")
-        self.assertEqual(words[-1], "tind")
+        self.assertEqual(words[-1], "tin")
+        self.assertNotIn("abid", words)
 
     def test_main_reports_missing_dictionary(self):
         output = StringIO()

@@ -5,11 +5,6 @@
     "score": 4
   },
   {
-    "word": "abid",
-    "length": 4,
-    "score": 7
-  },
-  {
     "word": "ad",
     "length": 2,
     "score": 3
@@ -105,11 +100,6 @@
     "score": 6
   },
   {
-    "word": "bant",
-    "length": 4,
-    "score": 6
-  },
-  {
     "word": "bat",
     "length": 3,
     "score": 5
@@ -155,24 +145,9 @@
     "score": 6
   },
   {
-    "word": "daint",
-    "length": 5,
-    "score": 6
-  },
-  {
     "word": "dan",
     "length": 3,
     "score": 4
-  },
-  {
-    "word": "dant",
-    "length": 4,
-    "score": 5
-  },
-  {
-    "word": "di",
-    "length": 2,
-    "score": 3
   },
   {
     "word": "dib",
@@ -205,11 +180,6 @@
     "score": 3
   },
   {
-    "word": "idant",
-    "length": 5,
-    "score": 6
-  },
-  {
     "word": "in",
     "length": 2,
     "score": 2
@@ -218,11 +188,6 @@
     "word": "it",
     "length": 2,
     "score": 2
-  },
-  {
-    "word": "ita",
-    "length": 3,
-    "score": 3
   },
   {
     "word": "na",
@@ -235,19 +200,9 @@
     "score": 5
   },
   {
-    "word": "nat",
-    "length": 3,
-    "score": 3
-  },
-  {
     "word": "nib",
     "length": 3,
     "score": 5
-  },
-  {
-    "word": "nid",
-    "length": 3,
-    "score": 4
   },
   {
     "word": "nit",
@@ -265,11 +220,6 @@
     "score": 5
   },
   {
-    "word": "tabi",
-    "length": 4,
-    "score": 6
-  },
-  {
     "word": "tabid",
     "length": 5,
     "score": 8
@@ -278,11 +228,6 @@
     "word": "tad",
     "length": 3,
     "score": 4
-  },
-  {
-    "word": "tai",
-    "length": 3,
-    "score": 3
   },
   {
     "word": "tain",
@@ -305,23 +250,8 @@
     "score": 4
   },
   {
-    "word": "tid",
-    "length": 3,
-    "score": 4
-  },
-  {
     "word": "tin",
     "length": 3,
     "score": 3
-  },
-  {
-    "word": "tina",
-    "length": 4,
-    "score": 4
-  },
-  {
-    "word": "tind",
-    "length": 4,
-    "score": 5
   }
 ]
