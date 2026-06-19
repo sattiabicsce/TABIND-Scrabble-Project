@@ -1,0 +1,327 @@
+[
+  {
+    "word": "ab",
+    "length": 2,
+    "score": 4
+  },
+  {
+    "word": "abid",
+    "length": 4,
+    "score": 7
+  },
+  {
+    "word": "ad",
+    "length": 2,
+    "score": 3
+  },
+  {
+    "word": "adit",
+    "length": 4,
+    "score": 5
+  },
+  {
+    "word": "ai",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "aid",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "ain",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "ait",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "an",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "and",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "ani",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "ant",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "anti",
+    "length": 4,
+    "score": 4
+  },
+  {
+    "word": "at",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "ba",
+    "length": 2,
+    "score": 4
+  },
+  {
+    "word": "bad",
+    "length": 3,
+    "score": 6
+  },
+  {
+    "word": "bait",
+    "length": 4,
+    "score": 6
+  },
+  {
+    "word": "ban",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "band",
+    "length": 4,
+    "score": 7
+  },
+  {
+    "word": "bandit",
+    "length": 6,
+    "score": 9
+  },
+  {
+    "word": "bani",
+    "length": 4,
+    "score": 6
+  },
+  {
+    "word": "bant",
+    "length": 4,
+    "score": 6
+  },
+  {
+    "word": "bat",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "bi",
+    "length": 2,
+    "score": 4
+  },
+  {
+    "word": "bid",
+    "length": 3,
+    "score": 6
+  },
+  {
+    "word": "bin",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "bind",
+    "length": 4,
+    "score": 7
+  },
+  {
+    "word": "bint",
+    "length": 4,
+    "score": 6
+  },
+  {
+    "word": "bit",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "da",
+    "length": 2,
+    "score": 3
+  },
+  {
+    "word": "dab",
+    "length": 3,
+    "score": 6
+  },
+  {
+    "word": "daint",
+    "length": 5,
+    "score": 6
+  },
+  {
+    "word": "dan",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "dant",
+    "length": 4,
+    "score": 5
+  },
+  {
+    "word": "di",
+    "length": 2,
+    "score": 3
+  },
+  {
+    "word": "dib",
+    "length": 3,
+    "score": 6
+  },
+  {
+    "word": "din",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "dint",
+    "length": 4,
+    "score": 5
+  },
+  {
+    "word": "dit",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "dita",
+    "length": 4,
+    "score": 5
+  },
+  {
+    "word": "id",
+    "length": 2,
+    "score": 3
+  },
+  {
+    "word": "idant",
+    "length": 5,
+    "score": 6
+  },
+  {
+    "word": "in",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "it",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "ita",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "na",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "nab",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "nat",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "nib",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "nid",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "nit",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "ta",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "tab",
+    "length": 3,
+    "score": 5
+  },
+  {
+    "word": "tabi",
+    "length": 4,
+    "score": 6
+  },
+  {
+    "word": "tabid",
+    "length": 5,
+    "score": 8
+  },
+  {
+    "word": "tad",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "tai",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "tain",
+    "length": 4,
+    "score": 4
+  },
+  {
+    "word": "tan",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "ti",
+    "length": 2,
+    "score": 2
+  },
+  {
+    "word": "tian",
+    "length": 4,
+    "score": 4
+  },
+  {
+    "word": "tid",
+    "length": 3,
+    "score": 4
+  },
+  {
+    "word": "tin",
+    "length": 3,
+    "score": 3
+  },
+  {
+    "word": "tina",
+    "length": 4,
+    "score": 4
+  },
+  {
+    "word": "tind",
+    "length": 4,
+    "score": 5
+  }
+]

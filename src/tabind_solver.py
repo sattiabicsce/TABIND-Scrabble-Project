@@ -5,7 +5,7 @@ The solver intentionally separates two responsibilities:
 1. The dictionary file decides which words are Scrabble-valid.
 2. This program decides which dictionary words can be built from the rack.
 
-Expected dictionary format: one word per line.
+Expected dictionary format: one Scrabble-valid word per line.
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from typing import Iterable
 DEFAULT_RACK = "tabind"
 MIN_WORD_LENGTH = 2
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DICTIONARY = PROJECT_ROOT / "data" / "sample_scrabble_dictionary.txt"
+DEFAULT_DICTIONARY = PROJECT_ROOT / "data" / "scrabble_dictionary.txt"
 
 
 def normalize_word(raw_word: str) -> str:
@@ -79,8 +79,8 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="?",
         type=Path,
         help=(
-            "Text dictionary file with one Scrabble word per line. "
-            "Default: data/sample_scrabble_dictionary.txt"
+            "Full Scrabble dictionary file with one valid word per line. "
+            "Default: data/scrabble_dictionary.txt"
         ),
     )
     parser.add_argument(
@@ -102,7 +102,11 @@ def main(argv: list[str] | None = None) -> int:
     dictionary_path = args.dictionary or DEFAULT_DICTIONARY
 
     if not dictionary_path.exists():
-        parser.error(f"dictionary file not found: {dictionary_path}")
+        parser.error(
+            "full Scrabble dictionary file not found: "
+            f"{dictionary_path}. Add a full dictionary at that path or pass one, "
+            "for example: python src/tabind_solver.py path/to/scrabble_dictionary.txt"
+        )
 
     dictionary_words = read_dictionary(dictionary_path)
     words = find_words(dictionary_words, args.letters)

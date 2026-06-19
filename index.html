@@ -360,7 +360,7 @@
     <div class="hero">
       <div>
         <h1>TABIND Scrabble Project</h1>
-        <p class="lead">Alphabetized output for the rack `tabind`, with each letter used at most once. The included Python solver can reproduce this list from any one-word-per-line Scrabble dictionary.</p>
+        <p class="lead">Alphabetized output for the rack `tabind`, with each letter used at most once. The Python solver reads a full Scrabble dictionary file, then filters it to the words that can be made from those six characters.</p>
         <div class="rack" aria-label="Input rack tabind">
           <span class="tile">T<small>1</small></span>
           <span class="tile">A<small>1</small></span>
@@ -370,7 +370,7 @@
           <span class="tile">D<small>2</small></span>
         </div>
         <div class="actions">
-          <a class="button" href="data/tabind_nwl2023_words.txt">Download words</a>
+          <a class="button" href="data/tabind_scrabble_dictionary_words.txt">Download words</a>
           <a class="button secondary" href="src/tabind_solver.py">View solver</a>
           <button class="button secondary" type="button" id="copyWords">Copy list</button>
         </div>
@@ -378,7 +378,7 @@
 
       <aside class="stats" aria-label="Summary statistics">
         <div class="stat-grid">
-          <div class="stat"><strong>51</strong><span>words found</span></div>
+          <div class="stat"><strong>65</strong><span>words found</span></div>
           <div class="stat"><strong>5</strong><span>word lengths</span></div>
           <div class="stat"><strong>9</strong><span>top score</span></div>
           <div class="stat"><strong>6</strong><span>rack letters</span></div>
@@ -447,16 +447,19 @@ Table result_word {
     </section>
 
     <section id="run" class="two-col" aria-labelledby="run-title">
-      <div class="panel">
-        <h2 id="run-title">Run the Program</h2>
-        <pre><code>python src/tabind_solver.py</code></pre>
-        <pre><code>uv run python src/tabind_solver.py</code></pre>
-      </div>
+        <div class="panel">
+          <h2 id="run-title">Run the Program</h2>
+          <p>The project includes a full dictionary file at <code>data/scrabble_dictionary.txt</code>, one valid word per line. Run:</p>
+          <pre><code>python src/tabind_solver.py</code></pre>
+          <pre><code>uv run python src/tabind_solver.py</code></pre>
+          <p>Or pass the full dictionary path explicitly:</p>
+          <pre><code>python src/tabind_solver.py path/to/scrabble_dictionary.txt</code></pre>
+        </div>
 
       <div class="panel">
         <h2>Sources</h2>
-        <p>Sample output was verified against Free Scrabble Dictionary's `tabind` result, which identifies its source as NASPA Word List 2023. The Python program accepts any full Scrabble dictionary file with one word per line.</p>
-        <p><a href="https://www.freescrabbledictionary.com/scrabble-word-finder/?letters=tabind">Verified `tabind` query</a></p>
+        <p>The solver reads from the bundled full Scrabble word list in <code>data/scrabble_dictionary.txt</code>. That file comes from Richard Ressler's Scrabble Word List dataset, described as authorized words for use in Scrabble. You can replace it with a different full dictionary file if your class requires a specific edition.</p>
+        <p><a href="https://rressler.quarto.pub/i_data_sets/data_word_lists.html">Dictionary source</a></p>
       </div>
     </section>
   </main>
@@ -466,59 +469,14 @@ Table result_word {
   </footer>
 
   <script type="module">
-    const words = [
-      { word: "ab", length: 2, score: 4 },
-      { word: "ad", length: 2, score: 3 },
-      { word: "adit", length: 4, score: 5 },
-      { word: "ai", length: 2, score: 2 },
-      { word: "aid", length: 3, score: 4 },
-      { word: "ain", length: 3, score: 3 },
-      { word: "ait", length: 3, score: 3 },
-      { word: "an", length: 2, score: 2 },
-      { word: "and", length: 3, score: 4 },
-      { word: "ani", length: 3, score: 3 },
-      { word: "ant", length: 3, score: 3 },
-      { word: "anti", length: 4, score: 4 },
-      { word: "at", length: 2, score: 2 },
-      { word: "ba", length: 2, score: 4 },
-      { word: "bad", length: 3, score: 6 },
-      { word: "bait", length: 4, score: 6 },
-      { word: "ban", length: 3, score: 5 },
-      { word: "band", length: 4, score: 7 },
-      { word: "bandit", length: 6, score: 9 },
-      { word: "bani", length: 4, score: 6 },
-      { word: "bat", length: 3, score: 5 },
-      { word: "bi", length: 2, score: 4 },
-      { word: "bid", length: 3, score: 6 },
-      { word: "bin", length: 3, score: 5 },
-      { word: "bind", length: 4, score: 7 },
-      { word: "bint", length: 4, score: 6 },
-      { word: "bit", length: 3, score: 5 },
-      { word: "da", length: 2, score: 3 },
-      { word: "dab", length: 3, score: 6 },
-      { word: "dan", length: 3, score: 4 },
-      { word: "dib", length: 3, score: 6 },
-      { word: "din", length: 3, score: 4 },
-      { word: "dint", length: 4, score: 5 },
-      { word: "dit", length: 3, score: 4 },
-      { word: "dita", length: 4, score: 5 },
-      { word: "id", length: 2, score: 3 },
-      { word: "in", length: 2, score: 2 },
-      { word: "it", length: 2, score: 2 },
-      { word: "na", length: 2, score: 2 },
-      { word: "nab", length: 3, score: 5 },
-      { word: "nib", length: 3, score: 5 },
-      { word: "nit", length: 3, score: 3 },
-      { word: "ta", length: 2, score: 2 },
-      { word: "tab", length: 3, score: 5 },
-      { word: "tabid", length: 5, score: 8 },
-      { word: "tad", length: 3, score: 4 },
-      { word: "tain", length: 4, score: 4 },
-      { word: "tan", length: 3, score: 3 },
-      { word: "ti", length: 2, score: 2 },
-      { word: "tian", length: 4, score: 4 },
-      { word: "tin", length: 3, score: 3 }
-    ];
+    const tileScores = { a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 2, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10 };
+    const words = "ab abid ad adit ai aid ain ait an and ani ant anti at ba bad bait ban band bandit bani bant bat bi bid bin bind bint bit da dab daint dan dant di dib din dint dit dita id idant in it ita na nab nat nib nid nit ta tab tabi tabid tad tai tain tan ti tian tid tin tina tind"
+      .split(" ")
+      .map((word) => ({
+        word,
+        length: word.length,
+        score: [...word].reduce((total, letter) => total + tileScores[letter], 0)
+      }));
 
     const grid = document.querySelector("#wordGrid");
     const chips = [...document.querySelectorAll(".chip")];

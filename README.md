@@ -4,14 +4,15 @@ This project solves one focused data science assignment:
 
 > Take the letter combination `tabind` one time and create an alphabetical list of every Scrabble-valid word that can be formed from those letters.
 
-The implementation uses a small, documented Python program and a GitHub Pages-ready documentation page. The sample result was verified on 2026-06-08 against the Free Scrabble Dictionary word finder, which states that its results come from the NASPA Word List 2023, the official North American Scrabble tournament dictionary.
+The implementation uses a small, documented Python program and a GitHub Pages-ready documentation page. The program reads a full Scrabble dictionary file, then finds only the words that can be built from `tabind` while using each character no more than once. The bundled dictionary is `data/scrabble_dictionary.txt`, sourced from Richard Ressler's Scrabble Word List dataset.
 
 ## Final Alphabetical Output
 
-The verified `tabind` result contains 51 words:
+Using the bundled full Scrabble word list in `data/scrabble_dictionary.txt`, the `tabind` result contains 65 words:
 
 ```text
 ab
+abid
 ad
 adit
 ai
@@ -31,6 +32,7 @@ ban
 band
 bandit
 bani
+bant
 bat
 bi
 bid
@@ -40,28 +42,40 @@ bint
 bit
 da
 dab
+daint
 dan
+dant
+di
 dib
 din
 dint
 dit
 dita
 id
+idant
 in
 it
+ita
 na
 nab
+nat
 nib
+nid
 nit
 ta
 tab
+tabi
 tabid
 tad
+tai
 tain
 tan
 ti
 tian
+tid
 tin
+tina
+tind
 ```
 
 ## Method
@@ -118,7 +132,7 @@ The same ERD is saved as [`docs/tabind_erd.dbml`](docs/tabind_erd.dbml).
 
 ## Run Locally
 
-The project is dependency-free and can be run with standard Python:
+The project is dependency-free and includes a full Scrabble word list at `data/scrabble_dictionary.txt`. Run:
 
 ```bash
 python src/tabind_solver.py
@@ -130,11 +144,13 @@ With `uv`, as recommended in the checklist:
 uv run python src/tabind_solver.py
 ```
 
-To use a full Scrabble dictionary, provide a text file with one word per line:
+You can also provide another full Scrabble dictionary path explicitly:
 
 ```bash
 python src/tabind_solver.py path/to/scrabble_dictionary.txt --letters tabind --output data/my_tabind_results.txt
 ```
+
+The repository also includes `data/sample_scrabble_dictionary.txt` only as a small test/demo fixture. The program default is the full dictionary file, not the sample.
 
 ## Test
 
@@ -145,6 +161,7 @@ python -m unittest discover -s tests
 The tests verify that the solver:
 
 - uses each rack letter at most once
+- reads candidate words from a dictionary file
 - deduplicates repeated dictionary entries
 - ignores punctuation and non-alpha entries
 - returns words in alphabetical order
@@ -152,8 +169,8 @@ The tests verify that the solver:
 
 ## Sources
 
-- Free Scrabble Dictionary Scrabble Word Finder: https://www.freescrabbledictionary.com/scrabble-word-finder/?letters=tabind
-- Free Scrabble Dictionary states that results come from NASPA Word List 2023: https://www.freescrabbledictionary.com/scrabble-word-finder
+- Richard Ressler Scrabble Word List dataset: https://rressler.quarto.pub/i_data_sets/data_word_lists.html
+- Bundled full dictionary source file: https://raw.githubusercontent.com/rressler/data_raw_courses/main/scrabble_words.txt
 - Official Scrabble Players Dictionary word finder by Merriam-Webster: https://scrabble.merriam.com/
 - Mermaid documentation: https://mermaid.js.org/
 - dbdiagram: https://dbdiagram.io/
